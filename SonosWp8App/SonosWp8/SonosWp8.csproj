@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B7A3666C-93B4-4488-8680-1585F0A7D5C6}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SonosWp8</RootNamespace>
+    <AssemblyName>PhoneApp1</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SonosWp8_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SonosWp8.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanConverters.cs" />
+    <Compile Include="Converters\ScheduledBitmapImageConverter.cs" />
+    <Compile Include="Converters\VisibilityConverters.cs" />
+    <Compile Include="Extensions\CollectionExtensions.cs" />
+    <Compile Include="ILoaded.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="Models\MessageBus\LoadingDisableMessage.cs" />
+    <Compile Include="Models\MessageBus\LoadingEnableMessage.cs" />
+    <Compile Include="Models\MessageBus\MainPageLoadedMessage.cs" />
+    <Compile Include="Models\MessageBus\PlayOptionsEnableMessage.cs" />
+    <Compile Include="Navigation\IRouteMap.cs" />
+    <Compile Include="Navigation\IRouteProvider.cs" />
+    <Compile Include="Navigation\Navigator.cs" />
+    <Compile Include="TaskScheduler.cs" />
+    <Compile Include="ServiceFactory.cs" />
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="ContainerLongListSelector.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DeviceAuthTokenNeededEventArgs.cs" />
+    <Compile Include="Models\IsLoadingEventArgs.cs" />
+    <Compile Include="Models\PlayEventArgs.cs" />
+    <Compile Include="Models\MessageBus\UpdatedRoomsMessage.cs" />
+    <Compile Include="Navigation\RouteSonosWp8.cs" />
+    <Compile Include="Navigation\RouteProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AlarmsViewModel.cs" />
+    <Compile Include="ViewModels\AlbumListViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\FavoritesViewModel.cs" />
+    <Compile Include="ViewModels\LibraryViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\MusicViewModel.cs" />
+    <Compile Include="ViewModels\NowPlayingViewModel.cs" />
+    <Compile Include="ViewModels\PlaylistViewModel.cs" />
+    <Compile Include="ViewModels\QueueViewModel.cs" />
+    <Compile Include="ViewModels\SameArtistViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
+    <Compile Include="ViewModels\ServicesViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBaseExt.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\AlarmsView.xaml.cs">
+      <DependentUpon>AlarmsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImageArtistAndTitleView.xaml.cs">
+      <DependentUpon>ImageArtistAndTitleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicAlbumView.xaml.cs">
+      <DependentUpon>MusicAlbumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MusicView.xaml.cs">
+      <DependentUpon>MusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NowPlayingView.xaml.cs">
+      <DependentUpon>NowPlayingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TitleOnlyView.xaml.cs">
+      <DependentUpon>TitleOnlyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OverLay.xaml.cs">
+      <DependentUpon>OverLay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QueueView.xaml.cs">
+      <DependentUpon>QueueView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RoomsView.xaml.cs">
+      <DependentUpon>RoomsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SameArtistView.xaml.cs">
+      <DependentUpon>SameArtistView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Assets\ThemeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AlarmsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImageArtistAndTitleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MusicAlbumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NowPlayingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TitleOnlyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OverLay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QueueView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RoomsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServicesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SameArtistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\Dark\add.png" />
+    <Content Include="Assets\Dark\appbar.list.png" />
+    <Content Include="Assets\Dark\appbar.music.png" />
+    <Content Include="Assets\Dark\appbar.sound.0.png" />
+    <Content Include="Assets\Dark\appbar.sound.1.png" />
+    <Content Include="Assets\Dark\appbar.sound.2.png" />
+    <Content Include="Assets\Dark\appbar.sound.3.png" />
+    <Content Include="Assets\Dark\appbar.sound.mute.png" />
+    <Content Include="Assets\Dark\back.png" />
+    <Content Include="Assets\Dark\cancel.png" />
+    <Content Include="Assets\Dark\check.png" />
+    <Content Include="Assets\Dark\close.png" />
+    <Content Include="Assets\Dark\delete.png" />
+    <Content Include="Assets\Dark\edit.png" />
+    <Content Include="Assets\Dark\favs.addto.png" />
+    <Content Include="Assets\Dark\favs.png" />
+    <Content Include="Assets\Dark\feature.alarm.png" />
+    <Content Include="Assets\Dark\feature.search.png" />
+    <Content Include="Assets\Dark\feature.settings.png" />
+    <Content Include="Assets\Dark\folder.png" />
+    <Content Include="Assets\Dark\new.png" />
+    <Content Include="Assets\Dark\refresh.png" />
+    <Content Include="Assets\Dark\save.png" />
+    <Content Include="Assets\Dark\stop.png" />
+    <Content Include="Assets\Dark\sync.png" />
+    <Content Include="Assets\Dark\transport.ff.png" />
+    <Content Include="Assets\Dark\transport.pause.png" />
+    <Content Include="Assets\Dark\transport.play.png" />
+    <Content Include="Assets\Dark\transport.rew.png" />
+    <Content Include="Assets\defaultImageArt.jpg" />
+    <Content Include="Assets\favorites-logo.jpg" />
+    <Content Include="Assets\library-logo.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\playlist-icon.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\tunein-logo.jpg" />
+    <Content Include="Assets\WideLogo.png" />
+    <Content Include="TODO.txt" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SonosUPnP\SonosUPnP.csproj">
+      <Project>{EA06B261-72ED-440A-9979-30684FCFB0CE}</Project>
+      <Name>SonosUPnP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UPnPWp8\UPnPWp8.csproj">
+      <Project>{8DB54EBA-424B-46AE-BFE2-FFBF37172A36}</Project>
+      <Name>UPnPWp8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\wp8\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Extensions, Version=1.5.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Caliburn.Micro.1.5.2\lib\wp8\Caliburn.Micro.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP8, Version=4.2.30.23483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP8, Version=4.2.30.23483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.4.2.30.0\lib\wp8\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

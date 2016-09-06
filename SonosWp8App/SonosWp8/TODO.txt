@@ -1,0 +1,16 @@
+﻿GENA Protocol.
+ - support renew subsciption.
+ - support unsubscribe.
+
+
+PAGES:
+ - Settings.
+ - Alarms
+ - Music Services config.
+ - Music View.
+ - All music services.
+ - Radio.
+ - Queue.
+ - Now PLaying
+ - Play functionalities. (Play, Stop, Pause, FastForward, FastBackwards).
+ - LastFM support.
